@@ -5,9 +5,17 @@ const app = express();
 const jsonfile = require("jsonfile");
 const currentPath = process.cwd();
 const file = `${currentPath}/people.json`;
-console.log(file);
+
+function timeMiddleWare(req, res, next) {
+  console.log("date added");
+  next();
+}
+
+app.use(timeMiddleWare);
 
 app.get("/people", (req, res, next) => {
+  const time = new Date();
+  res.setHeader("received-time", time.toLocaleString());
   const { name } = req.query;
   jsonfile
     .readFile(file)
@@ -59,8 +67,5 @@ app.post("/people/:name", (req, res, next) => {
 
   res.send(`Person created: ${name}`);
 });
-
-app.delete;
-("/people/:name");
 
 app.listen(3000);
