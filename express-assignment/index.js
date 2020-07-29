@@ -8,14 +8,14 @@ const file = `${currentPath}/people.json`;
 
 function timeMiddleWare(req, res, next) {
   console.log("date added");
+  const time = new Date();
+  res.setHeader("received-time", time.toLocaleString());
   next();
 }
 
 app.use(timeMiddleWare);
 
 app.get("/people", (req, res, next) => {
-  const time = new Date();
-  res.setHeader("received-time", time.toLocaleString());
   const { name } = req.query;
   jsonfile
     .readFile(file)
