@@ -1,0 +1,7 @@
+{
+    "editor.fontSize": 14,
+    "editor.formatOnSave": true,
+    "editor.formatOnPaste": true,
+    "eslint.alwaysShowStatus": true,
+    "eslint.format.enable": true
+}
