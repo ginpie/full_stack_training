@@ -1,1 +1,0 @@
-https://github.com/ginpie/full_stack_training/tree/master/express-assignment
