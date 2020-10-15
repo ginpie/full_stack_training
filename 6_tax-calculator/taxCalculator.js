@@ -22,6 +22,7 @@ let taxTable = [
   [180001, 0.45],
 ];
 
-const income = 18000;
+const income = 60000;
+const tax = taxCalculation(income, taxTable);
 
-console.log("income: ", income, ", tax: ", taxCalculation(income, taxTable));
+console.log("income: ", income, ", tax: ", tax, ", have: ", income - tax);
